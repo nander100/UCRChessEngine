@@ -3,9 +3,10 @@
 
 class queen : public pieces {
     public:
-        queen(const string &);
+        queen(const string &, int, int);
+        void move() override {}
 };
 
-queen::queen(const string & color) : pieces(color) {
+queen::queen(const string & color,int x, int y) : pieces(color, x,y) {
     name = color + "q";
 }
