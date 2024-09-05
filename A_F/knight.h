@@ -1,12 +1,17 @@
 #pragma once
-#include "pieces.h"
+#include "square.h"
 
-class knight : public pieces {
+class knight : public square {
     public:
-        knight(const string &, int , int);
-        void move() override {}
+        knight(const string &,int,int);
+        void move() override {cout << "this is a" << name << endl;}
+        vector< pair<int,int> >& generateLegalMoves() override;
 };
 
-knight::knight(const string & color,int x, int y) : pieces(color, x,y) {
+
+vector< pair<int,int> >& knight::generateLegalMoves() {
+    
+}
+knight::knight(const string & color,int x, int y) : square() {
     name = color + "n";
 }

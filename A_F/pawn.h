@@ -1,12 +1,19 @@
 #pragma once
-#include "pieces.h"
+#include "square.h"
 
-class pawn : public pieces {
+class pawn : public square {
     public:
         pawn(const string &,int,int);
-        void move() override {}
+        void move() override;
+        vector< pair<int,int> >& generateLegalMoves() override;
 };
 
-pawn::pawn(const string & color,int x, int y) : pieces(color, x, y) {
+vector< pair<int,int> >& pawn::generateLegalMoves() {
+    
+}
+
+void pawn::move() { cout << "this is a" << name << endl;}
+
+pawn::pawn(const string & color,int x, int y) : square() {
     name = color + "p";
 }

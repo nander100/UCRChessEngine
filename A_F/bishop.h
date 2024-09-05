@@ -1,12 +1,17 @@
 #pragma once
-#include "pieces.h"
+#include "square.h"
 
-class bishop : public pieces {
+class bishop : public square {
     public:
         bishop(const string &,int,int);
-        void move() override {}
+        void move() override {cout << "this is a" << name << endl;}
+        vector< pair<int,int> >& generateLegalMoves() override;
 };
 
-bishop::bishop(const string & color,int x, int y) : pieces(color, x,y) {
+vector< pair<int,int> >& bishop::generateLegalMoves() {
+    
+}
+
+bishop::bishop(const string & color,int x, int y) : square() {
     name = color + "b";
 }

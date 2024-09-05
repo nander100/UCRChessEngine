@@ -1,12 +1,17 @@
 #pragma once
-#include "pieces.h"
+#include "square.h"
 
-class queen : public pieces {
+class queen : public square {
     public:
-        queen(const string &, int, int);
-        void move() override {}
+        queen(const string &,int,int);
+        void move() override {cout << "this is a" << name << endl;}
+        vector< pair<int,int> >& generateLegalMoves() override;
 };
 
-queen::queen(const string & color,int x, int y) : pieces(color, x,y) {
+vector< pair<int,int> >& queen::generateLegalMoves() {
+    
+}
+
+queen::queen(const string & color,int x, int y) : square() {
     name = color + "q";
 }

@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "board.h"
-
 using namespace std;
 
 
@@ -16,21 +15,25 @@ class chess {
 };
 
 
-void chess::movepiece() {
+void chess::movepiece() {   
     int row;
     int column;
     cout << "input row and then column of piece to move" << endl;
-    cin >> row >> column;
+    cin >> column >> row;
     
-    pieces* piece = &myboard.board[row][column];
+    square * currPiece = dynamic_cast<square*>(myboard.board[row][column]); 
 
-    cout << "input place to move" << endl;
-    cin >> row >> column;
 
-    pieces* location = &myboard.board[row][column];
+    currPiece->move();
 
-    *location = *piece;
-    *piece = pieces();
+
+    // cout << "input place to move" << endl;
+    // cin >> row >> column;
+
+    // square* location = &myboard.board[row][column];
+
+    // *location = *currPiece;
+    // *currPiece = square();
 }
 
 chess::chess() {
