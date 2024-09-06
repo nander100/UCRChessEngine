@@ -8,9 +8,8 @@ class chess {
     public:
         chess();
         void movepiece();
-    private:
+    public:
         board myboard;
-
 
 };
 
@@ -19,21 +18,16 @@ void chess::movepiece() {
     int row;
     int column;
     cout << "input row and then column of piece to move" << endl;
-    cin >> column >> row;
-    
-    square * currPiece = dynamic_cast<square*>(myboard.board[row][column]); 
+    cin >> row >> column;
 
+    pair<int,int> currPos(row,column);
 
-    currPiece->move();
+    cout << "input row and then column of location to move" << endl;
+    cin >> row >> column;
 
+    pair<int,int> posToMove(row,column);
 
-    // cout << "input place to move" << endl;
-    // cin >> row >> column;
-
-    // square* location = &myboard.board[row][column];
-
-    // *location = *currPiece;
-    // *currPiece = square();
+    myboard.movePiece(currPos,posToMove);
 }
 
 chess::chess() {

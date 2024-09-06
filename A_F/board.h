@@ -13,12 +13,28 @@ class board {
 
     private:
         string fen;
-
     public:
         square* board[8][8];
         void initboard();
         void print();
+        void movePiece(const pair<int,int> &, const pair<int,int> &);
 };
+
+
+void board::movePiece(const pair<int,int> & currPos,const pair<int,int> & posToMove) {
+    square * piece = dynamic_cast<square*>(board[currPos.first][currPos.second]); 
+    piece->generatePossibleMoves();
+
+    for(const auto & position : piece->possibleMoves) {
+        if(position == posToMove) {
+            delete board[posToMove.first][posToMove.second];
+            board[posToMove.first][posToMove.second] = piece;
+            piece->currPos = posToMove;
+            board[currPos.first][currPos.second] = new emptySquare("  ",currPos.first,currPos.second);
+        }
+    }
+}
+
 void board::print() {
     cout << "-----------------------------------------" << endl;
     for(const auto & row : board) {

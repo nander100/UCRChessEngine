@@ -4,11 +4,10 @@
 class queen : public square {
     public:
         queen(const string &,int,int);
-        void move() override {cout << "this is a" << name << endl;}
-        vector< pair<int,int> >& generateLegalMoves() override;
+        void generatePossibleMoves() override;
 };
 
-vector< pair<int,int> >& queen::generateLegalMoves() {
+void queen::generatePossibleMoves() {
     
 }
 

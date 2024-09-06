@@ -10,8 +10,8 @@ class square {
         square() { } 
         string name = "  ";
         string color;
-        int rank;
-        int file;
-        virtual void move() = 0;
-        virtual vector< pair<int,int> >& generateLegalMoves() = 0;
+        pair<int,int> currPos;
+        vector< pair<int,int> > possibleMoves;
+        virtual void generatePossibleMoves() = 0;
+
 };
