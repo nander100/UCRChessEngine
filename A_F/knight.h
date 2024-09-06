@@ -1,7 +1,7 @@
 #pragma once
 #include "square.h"
 #include "board.h"
-
+//test
 class knight : public square {
     public:
         knight(const string &,int,int);
