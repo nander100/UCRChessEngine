@@ -4,10 +4,10 @@
 class pawn : public square {
     public:
         pawn(const string &,int,int);
-        void generatePossibleMoves() override;
+        void generatePossibleMoves(const square * const board[8][8]) override;
 };
 
-void pawn::generatePossibleMoves() {
+void pawn::generatePossibleMoves(const square * const board[8][8]) {
     
 }
 

@@ -4,10 +4,10 @@
 class king : public square {
     public:
         king(const string &,int,int);
-        void generatePossibleMoves() override;
+        void generatePossibleMoves(const square * const board[8][8]) override;
 };
 
-void king::generatePossibleMoves() {
+void king::generatePossibleMoves(const square * const board[8][8]) {
     
 }
 

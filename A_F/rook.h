@@ -4,10 +4,10 @@
 class rook : public square {
     public:
         rook(const string &,int,int);
-        void generatePossibleMoves() override;
+        void generatePossibleMoves(const square * const board[8][8]) override;
 };
 
-void rook::generatePossibleMoves() {
+void rook::generatePossibleMoves(const square * const board[8][8]) {
     
 }
 

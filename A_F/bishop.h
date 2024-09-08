@@ -4,10 +4,10 @@
 class bishop : public square {
     public:
         bishop(const string &,int,int);
-        void generatePossibleMoves() override;
+        void generatePossibleMoves(const square * const board[8][8]) override;
 };
 
-void bishop::generatePossibleMoves() {
+void bishop::generatePossibleMoves(const square * const board[8][8]) {
     
 }
 

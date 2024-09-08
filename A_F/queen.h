@@ -4,10 +4,10 @@
 class queen : public square {
     public:
         queen(const string &,int,int);
-        void generatePossibleMoves() override;
+        void generatePossibleMoves(const square * const board[8][8]) override;
 };
 
-void queen::generatePossibleMoves() {
+void queen::generatePossibleMoves(const square * const board[8][8]) {
     possibleMoves.clear();
     const vector< pair<int,int> > queenMoves = {
         {-1, -1}, {-1, 0}, {-1, 1}, {0, -1},

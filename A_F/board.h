@@ -23,7 +23,7 @@ class board {
 
 void board::movePiece(const pair<int,int> & currPos,const pair<int,int> & posToMove) {
     square * piece = dynamic_cast<square*>(board[currPos.first][currPos.second]); 
-    piece->generatePossibleMoves();
+    piece->generatePossibleMoves(board);
 
     for(const auto & position : piece->possibleMoves) {
         if(position == posToMove) {

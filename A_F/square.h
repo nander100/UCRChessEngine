@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <utility>
+#include "board.h"
 using namespace std;
 
 class square {
@@ -15,8 +16,7 @@ class square {
         pair<int,int> addPair(const pair<int,int> & p1, const pair<int,int> & p2);
         pair<int,int> scalePair(int scalar, const pair<int,int> & p2);
         bool inBounds(const pair<int,int> &);
-        virtual void generatePossibleMoves() = 0;
-
+        virtual void generatePossibleMoves(const square * const board[8][8]) = 0;
 };
 
 pair<int,int> square::scalePair(int scalar, const pair<int,int> & p) {

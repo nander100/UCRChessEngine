@@ -5,10 +5,10 @@
 class knight : public square {
     public:
         knight(const string &,int,int);
-        void generatePossibleMoves() override;
+        void generatePossibleMoves(const square * const board[8][8]) override;
 };
 
-void knight::generatePossibleMoves() {
+void knight::generatePossibleMoves(const square * const board[8][8]) {
     
     possibleMoves.clear();
 
